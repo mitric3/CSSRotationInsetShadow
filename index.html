@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napredno Stilizovanje Boja i Texta</title>
+
+    <style>
+        body {
+            background-color: #050210;
+            
+        }
+
+        #circle {
+            border: none;
+            border-radius: 50%;
+            height: 300px;
+            width: 300px;
+            margin: 15% auto;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            animation-name: rotateAnimation;
+            animation-duration: 1.5s;
+            transition-timing-function: linear;
+            animation-iteration-count: infinite;
+            /*box-shadow: 0 0 65px white;*/
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #circle:before {
+            position: absolute;
+            z-index: 1;
+            /*top: 10%; left: 10%; bottom: 10%; right: 10%;*/
+            width: 240px;
+            height: 240px;
+            background: #07001f;
+            content: '';
+            border-radius: 50%;
+            animation-name: scaleAnimation;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        #circle:after {
+            position: absolute;
+            z-index: -1;
+            width: 450px;
+            height: 450px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            content: '';
+            border-radius: 50%;
+            opacity: 0.3;
+            box-shadow: inset 0px 0px 40px 47px #050210;
+        }
+
+        #innerCircle {
+            width: 250px;
+            height: 250px;
+            background: #050210;
+            border-radius: 50%;
+        }
+
+        @keyframes rotateAnimation {
+            from{
+                transform: rotate(0deg);
+                animation-timing-function: linear;
+            }
+            
+            to {
+                transform: rotate(360deg);
+                animation-timing-function: linear;
+            }
+        }
+
+        @keyframes scaleAnimation {
+            from{
+                transform: scale(0);
+                animation-timing-function: linear;
+            }
+            
+            to {
+                transform: scale(1);
+                animation-timing-function: linear;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="circle">
+        <div id="innerCircle"></div>
+    </div>
+</body>
+</html>
